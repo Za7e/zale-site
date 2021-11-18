@@ -1,0 +1,30 @@
+var element = document.getElementById('drag1');
+element.addEventListener('drag', on_drag);
+
+function on_drag(event) {
+    event.preventDefault();
+    // event.target.style.cursor = "move";
+}
+
+function drag_start(event) {
+    // event.dataTransfer.effectAllowed = "move";
+    var style = window.getComputedStyle(event.target, null);
+    var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY) + ',' + event.target.id;
+    event.dataTransfer.setData("Text", str);
+}
+
+function drop(event) {
+    var offset = event.dataTransfer.getData("Text").split(',');
+    var dm = document.getElementById(offset[2]);
+    dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
+    dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
+    event.preventDefault();
+    return false;
+}
+
+function drag_over(event) {
+    event.preventDefault();
+    // event.target.style.cursor = "move";
+    // console.log(event.target.style);
+    return false;
+}

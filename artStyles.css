@@ -1,0 +1,24 @@
+.dragArea {
+    width:600px;
+    height: 600px;
+    background-color: rgb(223, 60, 223);
+}
+
+.box {
+    border: 3px solid #666;
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+.grab{
+    cursor:move;
+}
+
+.grab:active{
+    cursor:move;
+}
+

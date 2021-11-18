@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="artStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+
+<body>
+    <div class="dragArea" ondragover="drag_over(event)" ondrop="drop(event)">
+        <div draggable="true" class="box grab" id="drag1" ondragstart="drag_start(event)">A</div>
+    </div>
+    <script src="drag.js"></script>
+</body>
+
+</html>
